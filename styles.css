@@ -1,2 +1,47 @@
-h1{color: #800080;}
-body{background: #FFFF00}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #552583; 
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #FDB927; 
+    margin-top: 10px;
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 400px;
+}
+
+p {
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #552583; 
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
