@@ -1,0 +1,12 @@
+body {
+    width: 640px; 
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  p {
+    border: 2px dashed #000000; 
+    padding: 1em; 
+    margin-bottom: 2em;
+  }
+  
