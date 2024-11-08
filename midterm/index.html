@@ -1,51 +1,62 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div id="wrapper">
-            <header>
-                <h1><img src="images/ResizedLogo.png" alt="The Walking Dead"></h1>
-                <p class="lead">The series features a large ensemble case as survivors of a zombie apocalypse trying to stay alive under near-constant threat of attacks from zombies known as "walkers".</p>
-                <button>Watch</button>
-            </header>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Walking Dead - Overview</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="wrapper">
+        
+        <header>
+            <div class="header-content">
+                <div class="header-left">
+                    <img src="images/ResizedLogo.png" alt="The Walking Dead" class="logo">
+                    <div class="header-text">
+                        <p class="lead">The series features a large ensemble cast as survivors of a zombie apocalypse trying to stay alive under near-constant threat of attacks from zombies known as "walkers".</p>
+                        <button class="watch-button">▶ Watch</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+        <nav class="sub-nav">
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="episodes.html">Episodes</a></li>
+                <li><a href="#">More Like This</a></li>
+            </ul>
+        </nav>
+
+        
+        <main>
+            <section class="show-overview">
+                <h2>About the Show</h2>
+                <p>The Walking Dead is a post-apocalyptic horror series created by Frank Darabont. The story follows a group of survivors navigating a world overrun by zombies, dealing with both the undead and other human threats.</p>
+            </section>
+
+            <section class="show-details">
+                <h3>Show Details</h3>
+                <p><strong>Creator:</strong> Frank Darabont</p>
+                <p><strong>Cast:</strong> Andrew Lincoln, Norman Reedus, Melissa McBride, Lauren Cohan, Danai Gurira</p>
+                <p><strong>Genre:</strong> Drama, Horror, Thriller</p>
+            </section>
+        </main>
+
+        
+        <footer>
+            <p>&copy; 2024 The Walking Dead Fan Page. All Rights Reserved.</p>
             <nav>
                 <ul>
-                 <li><a href="index.html">About</a></li>
-                 <li><a href="episodes.html">Episodes</a></li>
-                 <li><a href="episdoes.html">More Like This</a></li>     
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
                 </ul>
             </nav>
-            <main>
-                <h2>The Walking Dead</h2>
-                <div class="col col-left">
+        </footer>
+    </div>
 
-                    <p>2010, <span class="16+">16+</span>, 11 Seasons </p>
-                    <p>"Fight the dead. Fear the living"</p>
-                </div>
-
-                <div class="col col-right">
-                    <div class="show-info">
-                        <h3>Creator:</h3>
-                        <p> Robert Kirkman</p>
-                    </div>
-                <div class="show-info">
-                    <h3>Cast:</h3>
-                    <p>Norman Reedus, Andrew Lincoln, Meslissa McBride, Lauren Cohan, Jeffrey Dean Morgan, Danai Gurira, Chandler Riggs, Steven Yeun</p>   
-                </div>
-                <div class="show-info">
-                    <h3>Genres:</h3>
-                    <p>Horror, Action, Thriller, Zombie Apocalypse, Science Fiction, Drama</p>
-                </div>
-                </div>
-
-            </main>
-            <footer>&copy; 2024 AMC Networks Inc. </footer>
-        </div>
-    </body>
-
-   
+</body>
 </html>

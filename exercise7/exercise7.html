@@ -5,33 +5,36 @@
     <title>Exercise 7</title>
 
     <style>
-    /* Type CSS code here */
+     
+      #wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
 
-    #wrapper{
-      max-width:1200px;
-      margin:0 auto;
-    }
+      .flex-container {
+        display: flex; 
+      }
 
-    .flex-item{
-      width:200px;
-      border:solid 1px gray;
-      padding:5px;
-      border-radius: 10px;
-      margin:0.5em;
-    }
+      .flex-item {
+        flex: 1 0 0; 
+        border: solid 1px gray;
+        padding: 5px;
+        border-radius: 10px;
+        margin: 0.5em;
+      }
 
-    .lead{
-      border:none;
-    }
+      .lead {
+        flex: 2 0 0; 
+        border: none;
+      }
 
-    .img-responsive{
-      width:100%;
-    }
+      .img-responsive {
+        width: 100%;
+      }
 
-    .lead p{
-      font-size: larger;
-    }
-
+      .lead p {
+        font-size: larger;
+      }
     </style>
 
   </head>
@@ -60,7 +63,7 @@
           <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
         </div>
 
-      </div> <!-- closing .flex-container -->
-  </div> <!-- closing #wrapper -->
-</body>
+      </div> 
+    </div> 
+  </body>
 </html>
