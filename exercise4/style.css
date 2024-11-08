@@ -1,0 +1,14 @@
+.content {
+    /* Apply two different backgrounds: an image and a gradient */
+    background: 
+        url('https://via.placeholder.com/150') no-repeat center center / cover,
+        linear-gradient(to right, #ff7e5f, #feb47b);
+    
+    /* Set a fallback background color in case the images don’t load */
+    background-color: #f0f0f0;
+
+    /* Styling to make the background more visible */
+    padding: 20px;
+    color: #333;
+    border-radius: 10px;
+}
