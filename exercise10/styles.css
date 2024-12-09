@@ -1,4 +1,4 @@
-/* Reset styles for list */
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -10,7 +10,7 @@ ul {
 }
 
 .menu > li {
-    position: relative; /* Needed for positioning the dropdown */
+    position: relative; 
 }
 
 .menu a {
@@ -26,24 +26,24 @@ ul {
     background-color: #0056b3;
 }
 
-/* Style the arrow icon */
+
 .arrow {
     float: right;
     font-size: 0.8em;
 }
 
-/* Hide the dropdown by default */
+
 .submenu {
     display: none;
     position: absolute;
     top: 0;
-    left: 100%; /* Align dropdown to the right of the parent */
+    left: 100%; 
     background-color: #f8f9fa;
     border: 1px solid #ccc;
     width: 150px;
 }
 
-/* Style the submenu items */
+
 .submenu li {
     border-bottom: 1px solid #ddd;
 }
@@ -57,7 +57,7 @@ ul {
     background-color: #ddd;
 }
 
-/* Show dropdown on hover */
+
 .menu > li:hover .submenu {
     display: block;
 }
