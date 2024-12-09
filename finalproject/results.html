@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design @ CUNY</title>
+    <link rel="stylesheet" href="css/results.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/results-page.css" />
+    
+  </head>
+  <body>
+    <div id="wrapper">
+      <header class="site-header">
+        <h1><a href="index.html">DESIGN @ CUNY</a></h1>
+        <nav class="top-nav">
+          <div class="menubar">
+            <a href="https://www.cuny.edu/about/">ABOUT CUNY</a>
+            <a href="https://www.cuny.edu/financial-aid/">FINANCIAL AID</a>
+            <a href="https://www.cuny.edu/admissions/apply-to-cuny/?utm_source=applynav">APPLY</a>
+          </div>
+          <div class="search">
+            <input type="text" placeholder="Search" />
+            <button class="search-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M10 2a8 8 0 105.29 14.71l4.58 4.58a1 1 0 001.42-1.42l-4.58-4.58A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"
+                />
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Search Section -->
+      <section class="find-program">
+        <h2>Find a Design Program</h2>
+        <form id="search-form" method="GET" action="results.html">
+          <div class="dropdown-container">
+            <select name="discipline" id="discipline-filter">
+              <option value="" disabled selected>Discipline</option>
+              <option value="digital">Digital Design</option>
+              <option value="animation">Animation</option>
+              <option value="Industrial">Industrial Design</option>
+            </select>
+            <select name="degree" id="degree-filter">
+              <option value="" disabled selected>Degree</option>
+              <option value="associate">Associate</option>
+              <option value="bachelor">Bachelor</option>
+            </select>
+            <select name="borough" id="borough-filter">
+              <option value="" disabled selected>Borough</option>
+              <option value="bronx">Bronx</option>
+              <option value="brooklyn">Brooklyn</option>
+              <option value="queens">Queens</option>
+              <option value="manhattan">Manhattan</option>
+            </select>
+          </div>
+          <button type="submit" id="search-button">Search</button>
+        </form>
+      </section>
+      <h1>Search Results</h1>
+    </header>
+
+
+    <section id="results-container">
+      
+    </section>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Parse query parameters
+  const queryParams = new URLSearchParams(window.location.search);
+  const disciplineFilter = queryParams.get('discipline');
+  const degreeFilter = queryParams.get('degree');
+  const boroughFilter = queryParams.get('borough');
+
+  // Complete programs data
+  const programs = [
+    // Bronx Community College
+    {
+      title: 'Digital Design - Bronx Community College',
+      description: 'This program prepares students for careers in the visual communication industry in positions such as graphic design, web design, computer animation, 3D graphic visualization, motion graphics design and interactive multimedia design.',
+      degree: 'associate',
+      discipline: 'digital design',
+      borough: 'bronx',
+      image: 'images/bxcc.gif',
+      website: 'https://www.bcc.cuny.edu/academics/academic-departments/art-and-music-department/degree-and-certificate-programs-courses/digital-design/'
+    },
+
+    // Hostos Community College
+    {
+      title: 'Digital Design & Animation - Hostos Community College',
+      description: 'Through lectures and studio-based classes the Digital Design and Animation Program provides students with a strong foundation for future occupations in motion graphics, animation, graphic design and/or web design. ',
+      degree: 'associate',
+      discipline: 'digital design, animation',
+      borough: 'bronx',
+      image: 'images/animation.png',
+      website: 'https://www.hostos.cuny.edu/Administrative-Offices/Office-of-Academic-Affairs/Departments/Humanities/Programs/Digital-Design-Animation'
+    },
+    {
+      title: 'Game Design - Hostos Community College',
+      description: 'The Associate degree in Game Design will provide students with a strong foundation for future occupations in the entertainment software industry. It will provide students with additional career opportunities in the field of entertainment software publishing.',
+      degree: 'associate',
+      discipline: 'digital design',
+      borough: 'bronx',
+      image: 'images/game-design.jpg',
+      website: 'https://www.hostos.cuny.edu/Administrative-Offices/Office-of-Academic-Affairs/Departments/Humanities/Programs/Game-Design-(1)'
+    },
+
+    // Lehman College
+    {
+      title: 'Computer Graphics & Imaging - Lehman College',
+      description: 'The Computer Graphics and Imaging program offers courses covering web design, imaging, 3-D modeling, animation, interactivity, and broadcast design, preparing students for careers as well as graduate study in these fields. ',
+      degree: 'bachelor',
+      discipline: 'digital design, animation',
+      borough: 'bronx',
+      image: 'images/200w.gif',
+      website: 'https://lehman-undergraduate.catalog.cuny.edu/programs/CGI-BS'
+    },
+
+    // Kingsborough Community College
+    {
+      title: 'Animation - Kingsborough Community College',
+      description: 'The Animation concentration is part of the Graphic Design and Illustration major. Students learn traditional, hand-drawn animation in a digital environment, as well as storyboarding and 3D animation.',
+      degree: 'associate',
+      discipline: 'digital design, animation',
+      borough: 'brooklyn',
+      image: 'images/kingsani.jpg',
+      website: 'https://www.kbcc.cuny.edu/academicdepartments/art/Animation.html'
+    },
+    {
+      title: 'Graphic Design & Illustration - Kingsborough Community College',
+      description: 'The Art Department at Kingsborough Community College is dedicated to providing a comprehensive program of study in the visual arts, designed to prepare students of diverse life experience for either continued baccalaureate study or immediate entry into a range of visual art professions.',
+      degree: 'associate',
+      discipline: 'digital design, industrial design',
+      borough: 'brooklyn',
+      image: 'images/graphic1.jpg',
+      website: 'https://www.kbcc.cuny.edu/academicdepartments/art/Students/studentwork/illustration.html'
+    },
+    {
+      title: 'UX Design - Kingsborough Community College',
+      description: 'The Art Department at Kingsborough Community College is dedicated to providing a comprehensive program of study in the visual arts, designed to prepare students of diverse life experience for either continued baccalaureate study or immediate entry into a range of visual art professions.',
+      degree: 'associate',
+      discipline: 'digital design, industrial design',
+      borough: 'brooklyn',
+      image: 'images/indus1.jpg',
+      website: 'https://www.kbcc.cuny.edu/academicdepartments/art/UX-Design.html'
+    },
+
+    // LaGuardia Community College
+    {
+      title: 'Industrial Design - LaGuardia Community College',
+      description: 'The Industrial Design program provides students a foundation experience in the necessary skills to begin a career in Computer Assisted Design (CAD), Model making, Product Design and Fabrication or transfer to a four-year institution.',
+      degree: 'associate',
+      discipline: 'digital design, industrial design',
+      borough: 'queens',
+      image: 'images/indus.gif',
+      website: 'https://www.laguardia.edu/majors/industrial-design/'
+    },
+    {
+      title: 'New Media Technology - LaGuardia Community College',
+      description: 'The New Media Technology major offers students the opportunity to work and experiment with some of the exciting technologies available today. Students develop a broad understanding of multimedia and Internet technologies in order to develop expertise in creating digital content.',
+      degree: 'associate',
+      discipline: 'digital design, industrial design',
+      borough: 'queens',
+      image: 'images/graphic2.jpg',
+      website: 'https://www.laguardia.edu/majors/new-media-technology/'
+    },
+
+    // Queensborough Community College
+    {
+      title: 'Digital Art and Design - Queensborough Community College',
+      description: 'The A.S. degree program in Digital Art and Design prepares students to enter the greatly expanding field of new media. In addition to four basic courses that provide a solid background in art, students take five courses in digital art and design, which develop computer skills for fine and applied arts. ',
+      degree: 'associate',
+      discipline: 'digital design, industrial design',
+      borough: 'queens',
+      image: 'images/graphic3.jpg',
+      website: 'https://www.qcc.cuny.edu/academics/degree-programs/digital-art-design.html'
+    },
+
+    // Borough of Manhattan Community College
+    {
+      title: 'Animation and Motion Graphics - Borough of Manhattan Community College',
+      description: 'The Animation and Motion Graphics program provides students with the fundamentals of two- and three-dimensional (2D and 3D) animation, motion graphics, and special effects for advertising campaigns, video games, movies, and television.',
+      degree: 'associate',
+      discipline: 'digital design, animation',
+      borough: 'manhattan',
+      image: 'images/live.gif',
+      website: 'http://www.bmcc.cuny.edu/media-arts/ani_program.jsp'
+    },
+    {
+      title: 'Multimedia Programming and Design - Borough of Manhattan Community College',
+      description: 'The Multimedia Programming and Design Program prepares students for careers in a variety of multimedia industries, companies and institutions that develop, produce or market multimedia products, programs or services.',
+      degree: 'associate',
+      discipline: 'digital design, industrial design, animation',
+      borough: 'manhattan',
+      image: 'images/fingers.gif',
+      website: 'http://www.bmcc.cuny.edu/media-arts/mmp_program.jsp'
+    },
+
+    // Baruch College
+    {
+      title: 'Graphic Communication - Baruch College',
+      description: 'The graphic communication specialization provides training in graphics as well as basic training in the broader aspects of business communication. It prepares the graphic artist to enter a business environment. ',
+      degree: 'bachelor',
+      discipline: 'digital design, industrial design',
+      borough: 'manhattan',
+      image: 'images/communication.gif',
+      website: 'https://weissman.baruch.cuny.edu/weissman-academic-departments/majors-minors/graphic-communication/'
+    },
+
+    // Queens College
+    {
+      title: 'Design - Queens College',
+      description: 'Queens College’s Design program combines knowledgeable faculty with industry standard software and the creativity of a studio-based learning environment. Students choose one of three concentrations: Communication Design, Animation & Illustration or Interaction Design.',
+      degree: 'bachelor',
+      discipline: 'digital design, animation',
+      borough: 'queens',
+      image: 'images/design.gif',
+      website: 'https://www.qc.cuny.edu/academics/art/design-bfa/'
+    },
+
+    // York College
+    {
+      title: 'Communications Technology - York College',
+      description: 'An interdisciplinary program offering concentrations in digital video, computer graphics, and systems applications.',
+      degree: 'bachelor',
+      discipline: 'digital design',
+      borough: 'queens',
+      image: 'images/comm1.gif',
+      website: 'https://york-undergraduate.catalog.cuny.edu/programs/CT-MIN'
+    },
+
+    // The City College of New York
+    {
+      title: 'Electronic Design and Multimedia - The City College of New York',
+      description: 'The Electronic Design & Multimedia prepares students for careers in design in traditional print and emerging electronic media. It offers one of the most comprehensive, affordable 4-year programs in electronic art at a New York City public university, and has a 18-year record of alumni success.',
+      degree: 'bachelor',
+      discipline: 'digital design, industrial design',
+      borough: 'manhattan',
+      image: 'images/media.gif',
+      website: 'https://www.ccny.cuny.edu/edm'
+    },
+
+    // NYC College of Technology
+    {
+      title: 'Industrial Design Technology - NYC College of Technology',
+      description: 'The Industrial Design Technology (IND) program is designed to provide students with a wide variety of skills enabling them to utilize a number of 2D, 3D and animation/simulation software packages in several diverse fields.',
+      degree: 'associates',
+      discipline: 'digital design',
+      borough: 'brooklyn',
+      image: 'images/tech1.gif',
+      website: 'https://www.citytech.cuny.edu/mechanical/industrial-technology-aas.aspx'
+    },
+
+    {
+      title: 'Communication Design - NYC College of Technology',
+      description: 'The AAS degree program in Communication Design provides students with a solid foundation in the theory and practices of the Communication Design profession and a grounding in general education. Students explore visual expression through a range of courses in drawing, design and web design.  ',
+      degree: 'associates',
+      discipline: 'digital design',
+      borough: 'brooklyn',
+      image: 'images/nycc.gif',
+      website: 'https://www.citytech.cuny.edu/communication-design/communication-design-aas.aspx'
+    },
+
+    {
+      title: 'Communication Design - NYC College of Technology',
+      description: 'The BFA degree develops students abilities to frame, research and solve increasingly complex visual communication problems. Students develop a professional portfolio that  prepares them for employment as art directors, graphic designers, illustrators and web designers.',
+      degree: 'bachelors',
+      discipline: 'digital design',
+      borough: 'brooklyn',
+      image: 'images/nycc.gif',
+      website: 'https://www.citytech.cuny.edu/communication-design/communication-design-aas.aspx'
+    },
+
+    // The City College Of New York
+    {
+      title: 'Electronic Design & Multimedia - The City College of New York',
+      description: 'The Electronic Design & Multimedia prepares students for careers in design in traditional print and emerging electronic media. It offers one of the most comprehensive, affordable 4-year programs in electronic art at a New York City public university, and has a 18-year record of alumni success.',
+      degree: 'bachelors',
+      discipline: 'digital design',
+      borough: 'brooklyn',
+      image: 'images/ccon.gif',
+      website: 'https://www.ccny.cuny.edu/edm'
+    }
+
+
+
+  ];
+
+  const resultsContainer = document.getElementById('results-container');
+
+  // Filter logic
+  const filteredPrograms = programs.filter(program =>
+    (!disciplineFilter || program.discipline.toLowerCase().includes(disciplineFilter.toLowerCase())) &&
+    (!degreeFilter || program.degree === degreeFilter) &&
+    (!boroughFilter || program.borough === boroughFilter)
+  );
+
+  // Render filtered results
+  if (filteredPrograms.length > 0) {
+    filteredPrograms.forEach(program => {
+      const programElement = document.createElement('div');
+      programElement.className = 'program';
+      programElement.innerHTML = `
+        <img src="${program.image}" alt="${program.title}" class="program-image" />
+        <h3>${program.title}</h3>
+        <p>${program.description}</p>
+        <p><strong>Degree:</strong> ${program.degree}</p>
+        <p><strong>Discipline:</strong> ${program.discipline}</p>
+        <p><strong>Borough:</strong> ${program.borough}</p>
+        <a href="${program.website}" target="_blank" class="view-more-btn">View More</a>
+      `;
+      resultsContainer.appendChild(programElement);
+    });
+  } else {
+    resultsContainer.innerHTML = `<p>No results found for the selected filters.</p>`;
+  }
+});
+
+    </script>
+    <footer>
+        <p>&copy; 2024 The City University of New York | All Rights Reserved</p>
+      </footer>
+      
+  </body>
+</html>

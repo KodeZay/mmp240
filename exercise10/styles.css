@@ -1,0 +1,63 @@
+/* Reset styles for list */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    width: 200px;
+}
+
+.menu > li {
+    position: relative; /* Needed for positioning the dropdown */
+}
+
+.menu a {
+    display: block;
+    text-decoration: none;
+    padding: 10px 15px;
+    color: white;
+    background-color: #007BFF;
+    border-bottom: 1px solid #0056b3;
+}
+
+.menu a:hover {
+    background-color: #0056b3;
+}
+
+/* Style the arrow icon */
+.arrow {
+    float: right;
+    font-size: 0.8em;
+}
+
+/* Hide the dropdown by default */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%; /* Align dropdown to the right of the parent */
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    width: 150px;
+}
+
+/* Style the submenu items */
+.submenu li {
+    border-bottom: 1px solid #ddd;
+}
+
+.submenu a {
+    color: #333;
+    padding: 10px;
+}
+
+.submenu a:hover {
+    background-color: #ddd;
+}
+
+/* Show dropdown on hover */
+.menu > li:hover .submenu {
+    display: block;
+}

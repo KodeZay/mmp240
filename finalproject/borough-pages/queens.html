@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programs in Queens - Design @ CUNY</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/borough.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <header class="site-header">
+        <h1><a href="../index.html">DESIGN @ CUNY</a></h1>
+        <nav class="top-nav">
+          <div class="menubar">
+            <a href="https://www.cuny.edu/about/">ABOUT CUNY</a>
+            <a href="https://www.cuny.edu/financial-aid/">FINANCIAL AID</a>
+            <a href="https://www.cuny.edu/admissions/apply-to-cuny/?utm_source=applynav">APPLY</a>
+          </div>
+          <div class="search">
+            <input type="text" placeholder="Search" />
+            <button class="search-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M10 2a8 8 0 105.29 14.71l4.58 4.58a1 1 0 001.42-1.42l-4.58-4.58A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"
+                />
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <!-- Search Filters (dropdowns prefilled from query params) -->
+        <section class="find-program">
+          <h2>Find a Design Program in Queens</h2>
+          <div class="dropdown-container">
+            <select id="discipline-filter">
+              <option value="" disabled selected>Discipline</option>
+              <option value="graphic">Graphic Design</option>
+              <option value="animation">Animation</option>
+              <option value="web">Web Design</option>
+            </select>
+            <select id="degree-filter">
+              <option value="" disabled selected>Degree</option>
+              <option value="associate">Associate</option>
+              <option value="bachelor">Bachelor</option>
+              
+            </select>
+            <select id="borough-filter">
+              <option value="" disabled selected>Borough</option>
+              <option value="bronx">Bronx</option>
+              <option value="brooklyn">Brooklyn</option>
+              <option value="manhattan">Manhattan</option>
+              <option value="queens">Queens</option>
+            </select>
+          </div>
+          <button id="search-button">Search</button>
+        </section>
+
+        <!-- Program Cards (Filtered Dynamically) -->
+        <section class="programs-list">
+          <!-- Program Cards with data- attributes for filtering -->
+          <div class="program-card" data-discipline="animation" data-degree="associate" data-borough="queens">
+            <img src="https://via.placeholder.com/200x150" alt="Digital Art and Design Program" />
+            <h3 class="program-title">Digital Art and Design - Queensborough Community College</h3>
+            <p class="program-description">
+              Prepares students for a career in new media through foundational art courses and hands-on digital art and design.
+            </p>
+            <button class="learn-more-btn">Learn More</button>
+          </div>
+
+          <div class="program-card" data-discipline="web" data-degree="associate" data-borough="queens">
+            <img src="https://via.placeholder.com/200x150" alt="New Media Technology Program" />
+            <h3 class="program-title">New Media Technology - LaGuardia Community College</h3>
+            <p class="program-description">
+              Offers students experience with multimedia, web, and internet technologies to prepare for digital content creation.
+            </p>
+            <button class="learn-more-btn">Learn More</button>
+          </div>
+
+          <div class="program-card" data-discipline="graphic" data-degree="associate" data-borough="queens">
+            <img src="https://via.placeholder.com/200x150" alt="Industrial Design Program" />
+            <h3 class="program-title">Industrial Design - LaGuardia Community College</h3>
+            <p class="program-description">
+              Provides foundational skills in CAD, product design, and fabrication for a career in industrial design.
+            </p>
+            <button class="learn-more-btn">Learn More</button>
+          </div>
+
+          <div class="program-card" data-discipline="graphic" data-degree="bachelor" data-borough="queens">
+            <img src="https://via.placeholder.com/200x150" alt="Communication Design Program" />
+            <h3 class="program-title">Communication Design - New York City College of Technology</h3>
+            <p class="program-description">
+              Offers students a solid foundation in visual communication with courses in design, drawing, and web design.
+            </p>
+            <button class="learn-more-btn">Learn More</button>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; 2024 CUNY Design Programs. All rights reserved.</p>
+      </footer>
+    </div>
+
+    
+    <script> 
+    document.addEventListener('DOMContentLoaded', () => {
+    // Get filter elements
+    const searchButton = document.getElementById('search-button');
+    const disciplineFilter = document.getElementById('discipline-filter');
+    const degreeFilter = document.getElementById('degree-filter');
+    const boroughFilter = document.getElementById('borough-filter');
+    const programCards = document.querySelectorAll('.program-card'); // All program cards
+  
+    // Function to filter programs based on selected filters
+    function filterPrograms() {
+      // Get the selected filter values
+      const disciplineValue = disciplineFilter.value.toLowerCase();
+      const degreeValue = degreeFilter.value.toLowerCase();
+      const boroughValue = boroughFilter.value.toLowerCase();
+  
+      programCards.forEach(card => {
+        const discipline = card.dataset.discipline.toLowerCase();  // Get discipline from data-attribute
+        const degree = card.dataset.degree.toLowerCase();  // Get degree from data-attribute
+        const borough = card.dataset.borough.toLowerCase();  // Get borough from data-attribute
+  
+        // Show or hide cards based on matching filters
+        const matchesDiscipline = !disciplineValue || discipline.includes(disciplineValue);
+        const matchesDegree = !degreeValue || degree.includes(degreeValue);
+        const matchesBorough = !boroughValue || borough.includes(boroughValue);
+  
+        // If the card matches all selected filters, show it; else, hide it
+        if (matchesDiscipline && matchesDegree && matchesBorough) {
+          card.style.display = 'block';  // Show the card
+        } else {
+          card.style.display = 'none';  // Hide the card
+        }
+      });
+    }
+  
+    // Trigger filtering when the user clicks the "Search" button
+    searchButton.addEventListener('click', (event) => {
+      event.preventDefault();  // Prevent form submission to stop page reload
+      filterPrograms();  // Call filter function on search click
+    });
+  
+    // Trigger filtering when any of the dropdown selections change
+    disciplineFilter.addEventListener('change', filterPrograms);
+    degreeFilter.addEventListener('change', filterPrograms);
+    boroughFilter.addEventListener('change', filterPrograms);
+  });
+    
+    </script>
+  </body>
+</html>

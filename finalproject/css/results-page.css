@@ -1,0 +1,46 @@
+/* In the new results-page.css file */
+.program {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.program-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.program-image {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.program-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.program-description {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.view-program-btn a {
+    text-decoration: none;
+    color: white;
+    background-color: #0071c5;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.view-program-btn a:hover {
+    background-color: #005fa3;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design @ CUNY</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/mobile.css" media="(max-width: 768px)">
+  </head>
+  <body>
+    <div id="wrapper">
+      <header class="site-header">
+        <h1><a href="index.html">DESIGN @ CUNY</a></h1>
+        <nav class="top-nav">
+          <div class="menubar">
+            <a href="https://www.cuny.edu/about/">ABOUT CUNY</a>
+            <a href="https://www.cuny.edu/financial-aid/">FINANCIAL AID</a>
+            <a href="https://www.cuny.edu/admissions/apply-to-cuny/?utm_source=applynav">APPLY</a>
+          </div>
+          <div class="search">
+            <input type="text" placeholder="Search" />
+            <button class="search-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M10 2a8 8 0 105.29 14.71l4.58 4.58a1 1 0 001.42-1.42l-4.58-4.58A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"
+                />
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Search Section -->
+      <section class="find-program">
+        <h2>Find a Design Program</h2>
+        <form id="search-form" method="GET" action="results.html">
+          <div class="dropdown-container">
+            <select name="discipline" id="discipline-filter">
+              <option value="" disabled selected>Discipline</option>
+              <option value="digital">Digital Design</option>
+              <option value="animation">Animation</option>
+              <option value="Industrial">Industrial Design</option>
+            </select>
+            <select name="degree" id="degree-filter">
+              <option value="" disabled selected>Degree</option>
+              <option value="associate">Associate</option>
+              <option value="bachelor">Bachelor</option>
+            </select>
+            <select name="borough" id="borough-filter">
+              <option value="" disabled selected>Borough</option>
+              <option value="bronx">Bronx</option>
+              <option value="brooklyn">Brooklyn</option>
+              <option value="queens">Queens</option>
+              <option value="manhattan">Manhattan</option>
+            </select>
+          </div>
+          <button type="submit" id="search-button">Search</button>
+        </form>
+      </section>
+
+      <!-- Hero Banner Section -->
+<div class="hero-banner">
+    <div class="hero-content">
+      <h3>
+        <a href="http://www1.cuny.edu/mu/forum/2018/02/07/queens-college-ranked-in-top-25-of-best-public-colleges-and-universities-for-graphic-design-in-the-nation/">
+          Queens College Ranked in Top 25 of Best Public Colleges and Universities for Graphic Design in the Nation
+        </a>
+      </h3>
+      <button class="apply-btn" onclick="window.location.href='https://www.cuny.edu/admissions/learnmore/?utm_source=Google&utm_medium=Paid+Social&utm_campaign=FY25UndergradSearch&utm_content=Search&gad_source=1&gclid=EAIaIQobChMIhrz-4s-YigMVVEb_AR3V-hQWEAAYASAAEgIjefD_BwE'">Apply Now</button>
+    </div>
+  </div>
+  
+
+      <main>
+        <div class="layout">
+          <section class="news">
+            <h2>Design News</h2>
+            <article>
+              <h3>CUNY TV Celebrates Three N.Y. Emmy Award Wins</h3>
+              <p>October 30, 2024</p>
+              <p>
+                CUNY TV, the public educational television station of The City University of New York, received three New York Emmy Awards during the 67th annual awards gala hosted at the New York Marriott Marquis this past weekend, bringing the station’s total count of awards won to 44...</p> 
+                <a href="https://www.cuny.edu/news/cuny-tv-celebrates-three-n-y-emmy-award-wins/">Read More</a>
+              </p>
+            </article>
+            <article>
+              <h3>Spitzer School’s Alejandro Estevez is 2024 HOK Diversity by Design Scholarship winner</h3>
+              <p>June 17, 2024</p>
+              <p>Alejandro Estevez, a fifth-year student in The City College of New York’s Bernard and Anne Spitzer School of Architecture is one of 10 outstanding students nationally awarded $10,000 HOK scholarships. A global design, architecture, engineering and planning firm, HOK presents the scholarships to reinforce its commitment to fostering greater diversity within the architectural profession...</p>
+              <a href="https://www.ccny.cuny.edu/news/spitzer-schools-alejandro-estevez-2024-hok-diversity-design-scholarship-winner">Read More</a>
+            </article>
+          </section>
+
+          <section class="events">
+            <h2>Events</h2>
+            <article>
+              <img src="images/Digital-Design-Showcase-cropped.jpg" alt="poster" class="event-image" />
+              <h3><a href="https://events.cuny.edu/cec/virtual-digital-design-showcase-day/">Virtual Digital Design Showcase Day</a></h3>
+              <p>Date: June 18, 2020</p>
+              <p>Time: 2:00 PM – 4:00 PM</p>
+              <p>College: Bronx Community College</p>
+            </article>
+          </section>
+        </div>
+      </main>
+
+      <footer>
+        <p>&copy; 2024 The City University of New York | All Rights Reserved</p>
+      </footer>
+    </div>
+
+    <script>
+        
+    </script>
+  </body>
+</html>

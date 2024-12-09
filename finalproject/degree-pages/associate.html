@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Associate Programs - Design @ CUNY</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/borough.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <header class="site-header">
+        <h1><a href="../index.html">DESIGN @ CUNY</a></h1>
+        <nav class="top-nav">
+          <div class="menubar">
+            <a href="https://www.cuny.edu/about/">ABOUT CUNY</a>
+            <a href="https://www.cuny.edu/financial-aid/">FINANCIAL AID</a>
+            <a href="https://www.cuny.edu/admissions/apply-to-cuny/?utm_source=applynav">APPLY</a>
+          </div>
+          <div class="search">
+            <input type="text" placeholder="Search" />
+            <button class="search-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M10 2a8 8 0 105.29 14.71l4.58 4.58a1 1 0 001.42-1.42l-4.58-4.58A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"
+                />
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="find-program">
+          <h2>Find a Design Program - Associate</h2>
+          <div class="dropdown-container">
+            <select name="discipline" id="discipline-filter">
+              <option value="" disabled selected>Discipline</option>
+              <option value="graphic">Graphic Design</option>
+              <option value="animation">Animation</option>
+              <option value="web">Web Design</option>
+            </select>
+            <select name="degree" id="degree-filter">
+              <option value="associate" selected>Associate</option>
+              <option value="bachelor">Bachelor</option>
+            </select>
+            <select name="borough" id="borough-filter">
+              <option value="" disabled selected>Borough</option>
+              <option value="bronx">Bronx</option>
+              <option value="brooklyn">Brooklyn</option>
+              <option value="queens">Queens</option>
+              <option value="manhattan">Manhattan</option>
+            </select>
+          </div>
+          <button type="button" id="search-button">Search</button>
+        </section>
+
+        <!-- Program Cards -->
+        <section class="programs-list">
+          <div class="program-card" data-discipline="graphic" data-degree="associate" data-borough="bronx">
+            <img src="https://via.placeholder.com/200x150" alt="Digital Design Program" />
+            <h3>Digital Design - Bronx Community College</h3>
+            <p>This program prepares students for careers in graphic design, web design, and interactive media.</p>
+          </div>
+
+          <div class="program-card" data-discipline="animation" data-degree="associate" data-borough="brooklyn">
+            <img src="https://via.placeholder.com/200x150" alt="Animation Program" />
+            <h3>Animation - Kingsborough Community College</h3>
+            <p>Learn traditional animation in a digital environment, including storyboarding and 3D animation.</p>
+          </div>
+
+          <div class="program-card" data-discipline="web" data-degree="associate" data-borough="queens">
+            <img src="https://via.placeholder.com/200x150" alt="Web Design Program" />
+            <h3>Web Design - Queensborough Community College</h3>
+            <p>Develop skills in web technologies and multimedia, preparing for careers in digital design.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; 2024 CUNY Design Programs. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script >
+        document.addEventListener('DOMContentLoaded', () => {
+    // Get filter elements
+    const searchButton = document.getElementById('search-button');
+    const disciplineFilter = document.getElementById('discipline-filter');
+    const degreeFilter = document.getElementById('degree-filter');
+    const boroughFilter = document.getElementById('borough-filter');
+    const programCards = document.querySelectorAll('.program-card'); // All program cards
+  
+    // Function to filter programs based on selected filters
+    function filterPrograms() {
+      // Get the selected filter values
+      const disciplineValue = disciplineFilter.value.toLowerCase();
+      const degreeValue = degreeFilter.value.toLowerCase();
+      const boroughValue = boroughFilter.value.toLowerCase();
+  
+      programCards.forEach(card => {
+        const discipline = card.dataset.discipline.toLowerCase();  // Get discipline from data-attribute
+        const degree = card.dataset.degree.toLowerCase();  // Get degree from data-attribute
+        const borough = card.dataset.borough.toLowerCase();  // Get borough from data-attribute
+  
+        // Show or hide cards based on matching filters
+        const matchesDiscipline = !disciplineValue || discipline.includes(disciplineValue);
+        const matchesDegree = !degreeValue || degree.includes(degreeValue);
+        const matchesBorough = !boroughValue || borough.includes(boroughValue);
+  
+        // If the card matches all selected filters, show it; else, hide it
+        if (matchesDiscipline && matchesDegree && matchesBorough) {
+          card.style.display = 'block';  // Show the card
+        } else {
+          card.style.display = 'none';  // Hide the card
+        }
+      });
+    }
+  
+    // Trigger filtering when the user clicks the "Search" button
+    searchButton.addEventListener('click', (event) => {
+      event.preventDefault();  // Prevent form submission to stop page reload
+      filterPrograms();  // Call filter function on search click
+    });
+  
+    // Trigger filtering when any of the dropdown selections change
+    disciplineFilter.addEventListener('change', filterPrograms);
+    degreeFilter.addEventListener('change', filterPrograms);
+    boroughFilter.addEventListener('change', filterPrograms);
+  });
+  
+    </script>
+  </body>
+</html>
