@@ -6,10 +6,50 @@
     <title>Design @ CUNY</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/mobile.css" media="(max-width: 768px)">
+    <link rel="stylesheet" href="css/menu.css">
   </head>
   <body>
     <div id="wrapper">
       <header class="site-header">
+          <!-- Dropdown Menu -->
+          <div class="menu-icon-container">
+            <button class="menu-icon">
+              <img src="images/menu.svg" alt="Menu Icon" />
+            </button>
+            <nav class="dropdown-menu">
+              <ul>
+                <!-- Locations Dropdown -->
+                <li class="dropdown">
+                  <a href="#">Locations</a>
+                  <ul class="submenu">
+                    <li><a href="borough-pages/bronx.html">Bronx</a></li>
+                    <li><a href="borough-pages/brooklyn.html">Brooklyn</a></li>
+                    <li><a href="borough-pages/queens.html">Queens</a></li>
+                    <li><a href="borough-pages/manhattan.html">Manhattan</a></li>
+                  </ul>
+                </li>
+        
+                <!-- Disciplines Dropdown -->
+                <li class="dropdown">
+                  <a href="#">Disciplines</a>
+                  <ul class="submenu">
+                    <li><a href="discipline-page/digital-design.html">Digital Design</a></li>
+                    <li><a href="discipline-page/animation.html">Animation</a></li>
+                    <li><a href="discipline-page/industrial-design.html">Industrial Design</a></li>
+                  </ul>
+                </li>
+        
+                <!-- Degrees Dropdown -->
+                <li class="dropdown">
+                  <a href="#">Degrees</a>
+                  <ul class="submenu">
+                    <li><a href="degree-pages/associate.html">Associate Degrees</a></li>
+                    <li><a href="degree-pages/bachelor.html">Bachelor Degrees</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
         <h1><a href="index.html">DESIGN @ CUNY</a></h1>
         <nav class="top-nav">
           <div class="menubar">
@@ -112,5 +152,5 @@
     <script>
         
     </script>
-  </body>
+      </body>
 </html>

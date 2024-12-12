@@ -119,4 +119,22 @@ body {
     margin-bottom: 10px; /* Add some spacing below the image */
     object-fit: contain; /* Ensures the image fits within the container without cropping */
   }
+
+  .view-more-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #0071c5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .view-more-btn:hover {
+    background-color: #005fa3;
+  }
   

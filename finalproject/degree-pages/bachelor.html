@@ -4,12 +4,53 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bachelor Programs - Design @ CUNY</title>
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/borough.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/results.css">
+    <link rel="stylesheet" href="../css/borough.css">
   </head>
   <body>
     <div id="wrapper">
       <header class="site-header">
+         <!-- Dropdown Menu -->
+         <div class="menu-icon-container">
+          <button class="menu-icon">
+            <img src="../images/menu.svg" alt="Menu Icon" />
+          </button>
+          <nav class="dropdown-menu">
+            <ul>
+              <!-- Locations Dropdown -->
+              <li class="dropdown">
+                <a href="#">Locations</a>
+                <ul class="submenu">
+                  <li><a href="../borough-pages/bronx.html">Bronx</a></li>
+                  <li><a href="../borough-pages/brooklyn.html">Brooklyn</a></li>
+                  <li><a href="../borough-pages/queens.html">Queens</a></li>
+                  <li><a href="../borough-pages/manhattan.html">Manhattan</a></li>
+                </ul>
+              </li>
+      
+              <!-- Disciplines Dropdown -->
+              <li class="dropdown">
+                <a href="#">Disciplines</a>
+                <ul class="submenu">
+                  <li><a href="../discipline-page/digital-design.html">Digital Design</a></li>
+                  <li><a href="../discipline-page/animation.html">Animation</a></li>
+                  <li><a href="../discipline-page/industrial-design.html">Industrial Design</a></li>
+                </ul>
+              </li>
+      
+              <!-- Degrees Dropdown -->
+              <li class="dropdown">
+                <a href="#">Degrees</a>
+                <ul class="submenu">
+                  <li><a href="../degree-pages/associate.html">Associate Degrees</a></li>
+                  <li><a href="../degree-pages/bachelor.html">Bachelor Degrees</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
         <h1><a href="../index.html">DESIGN @ CUNY</a></h1>
         <nav class="top-nav">
           <div class="menubar">
@@ -58,15 +99,45 @@
         <!-- Program Cards -->
         <section class="programs-list">
           <div class="program-card" data-discipline="graphic" data-degree="bachelor" data-borough="manhattan">
-            <img src="https://via.placeholder.com/200x150" alt="Electronic Design Program" />
+            <img src="../images/media.gif" alt="Electronic Design Program" />
             <h3>Electronic Design & Multimedia - The City College of New York</h3>
             <p>This program prepares students for careers in design for print and electronic media.</p>
+            <button class="view-more-btn"><a href="https://www.ccny.cuny.edu/edm" target="_blank">View More</a></button>
           </div>
 
           <div class="program-card" data-discipline="animation" data-degree="bachelor" data-borough="queens">
-            <img src="https://via.placeholder.com/200x150" alt="Design Program" />
+            <img src="../images/design.gif" alt="Design Program" />
             <h3>Design - Queens College</h3>
             <p>Combines faculty expertise with hands-on learning in communication design and animation.</p>
+            <button class="view-more-btn"><a href="https://www.qc.cuny.edu/academics/art/design-bfa/" target="_blank">View More</a></button>
+          </div>
+
+          <div class="program-card" data-discipline="graphic" data-degree="bachelor" data-borough="manhattan">
+            <img src="../images/200w.gif" alt="Electronic Design Program" />
+            <h3>Computer Graphics & Imaging - Lehman College</h3>
+            <p>The Computer Graphics and Imaging program offers courses covering web design, imaging, 3-D modeling, animation, interactivity, and broadcast design, preparing students for careers as well as graduate study in these fields.</p>
+            <button class="view-more-btn"><a href="https://lehman-undergraduate.catalog.cuny.edu/programs/CGI-BS" target="_blank">View More</a></button>
+          </div>
+
+          <div class="program-card" data-discipline="graphic" data-degree="bachelor" data-borough="manhattan">
+            <img src="../images/communication.gif" alt="Electronic Design Program" />
+            <h3>Graphic Communication - Baruch College</h3>
+            <p>The graphic communication specialization provides training in graphics as well as basic training in the broader aspects of business communication. It prepares the graphic artist to enter a business environment.</p>
+            <button class="view-more-btn"><a href="https://weissman.baruch.cuny.edu/weissman-academic-departments/areas-of-study/graphic-communication/" target="_blank">View More</a></button>
+          </div>
+
+          <div class="program-card" data-discipline="graphic" data-degree="bachelor" data-borough="manhattan">
+            <img src="../images/comm1.gif" alt="Electronic Design Program" />
+            <h3>Communications Technology - York College</h3>
+            <p>An interdisciplinary program offering concentrations in digital video, computer graphics, and systems applications.</p>
+            <button class="view-more-btn"><a href="https://york-undergraduate.catalog.cuny.edu/programs/CT-MIN" target="_blank">View More</a></button>
+          </div>
+
+          <div class="program-card" data-discipline="animation" data-degree="associate" data-borough="brooklyn">
+            <img src="../images/fingers.gif" alt="Animation Program" />
+            <h3>Communication Design - NYC College of Technology</h3>
+            <p>The AAS degree program in Communication Design provides students with a solid foundation in the theory and practices of the Communication Design profession and a grounding in general education. Students explore visual expression through a range of courses in drawing, design and web design.</p>
+            <button class="view-more-btn"><a href="http://www.citytech.cuny.edu/communication-design/communication-design-bfa.aspx" target="_blank">View More</a></button>
           </div>
         </section>
       </main>

@@ -3,16 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Design @ CUNY</title>
-    <link rel="stylesheet" href="css/results.css">
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/results-page.css" />
-    
+    <title>Industrial Design Programs - Design @ CUNY</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/borough.css" />
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/results.css">
+    <link rel="stylesheet" href="../css/results-page.css">
   </head>
   <body>
     <div id="wrapper">
       <header class="site-header">
-        <h1><a href="index.html">DESIGN @ CUNY</a></h1>
+         <!-- Dropdown Menu -->
+         <div class="menu-icon-container">
+          <button class="menu-icon">
+            <img src="../images/menu.svg" alt="Menu Icon" />
+          </button>
+          <nav class="dropdown-menu">
+            <ul>
+              <!-- Locations Dropdown -->
+              <li class="dropdown">
+                <a href="#">Locations</a>
+                <ul class="submenu">
+                  <li><a href="../borough-pages/bronx.html">Bronx</a></li>
+                  <li><a href="../borough-pages/brooklyn.html">Brooklyn</a></li>
+                  <li><a href="../borough-pages/queens.html">Queens</a></li>
+                  <li><a href="../borough-pages/manhattan.html">Manhattan</a></li>
+                </ul>
+              </li>
+      
+              <!-- Disciplines Dropdown -->
+              <li class="dropdown">
+                <a href="#">Disciplines</a>
+                <ul class="submenu">
+                  <li><a href="../discipline-page/digital-design.html">Digital Design</a></li>
+                  <li><a href="../discipline-page/animation.html">Animation</a></li>
+                  <li><a href="../discipline-page/industrial-design.html">Industrial Design</a></li>
+                </ul>
+              </li>
+      
+              <!-- Degrees Dropdown -->
+              <li class="dropdown">
+                <a href="#">Degrees</a>
+                <ul class="submenu">
+                  <li><a href="../degree-pages/associate.html">Associate Degrees</a></li>
+                  <li><a href="../degree-pages/bachelor.html">Bachelor Degrees</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <h1><a href="../index.html">DESIGN @ CUNY</a></h1>
         <nav class="top-nav">
           <div class="menubar">
             <a href="https://www.cuny.edu/about/">ABOUT CUNY</a>
@@ -32,21 +72,19 @@
         </nav>
       </header>
 
-      
-      <section class="find-program">
-        <h2>Find a Design Program</h2>
-        <form id="search-form" method="GET" action="results.html">
+      <main>
+        <section class="find-program">
+          <h2>Find a Design Program - Industrial Design</h2>
           <div class="dropdown-container">
             <select name="discipline" id="discipline-filter">
               <option value="" disabled selected>Discipline</option>
-              <option value="digital">Digital Design</option>
+              <option value="graphic">Graphic Design</option>
               <option value="animation">Animation</option>
-              <option value="Industrial">Industrial Design</option>
+              <option value="web">Web Design</option>
             </select>
             <select name="degree" id="degree-filter">
-              <option value="" disabled selected>Degree</option>
               <option value="associate">Associate</option>
-              <option value="bachelor">Bachelor</option>
+              <option value="bachelor" selected>Bachelor</option>
             </select>
             <select name="borough" id="borough-filter">
               <option value="" disabled selected>Borough</option>
@@ -56,9 +94,8 @@
               <option value="manhattan">Manhattan</option>
             </select>
           </div>
-          <button type="submit" id="search-button">Search</button>
-        </form>
-      </section>
+          <button type="button" id="search-button">Search</button>
+        </section>
       <h1>Search Results</h1>
     </header>
 
@@ -189,6 +226,8 @@ document.addEventListener('DOMContentLoaded', function () {
       image: 'images/live.gif',
       website: 'http://www.bmcc.cuny.edu/media-arts/ani_program.jsp'
     },
+
+    
     {
       title: 'Multimedia Programming and Design - Borough of Manhattan Community College',
       description: 'The Multimedia Programming and Design Program prepares students for careers in a variety of multimedia industries, companies and institutions that develop, produce or market multimedia products, programs or services.',

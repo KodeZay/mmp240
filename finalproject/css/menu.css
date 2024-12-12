@@ -1,0 +1,114 @@
+/* General Menu Styles */
+.menu-icon-container {
+    position: relative; /* Ensure dropdown positions are relative to this container */
+    display: inline-block;
+  }
+  
+  .menu-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .menu-icon img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Dropdown Menu Styles */
+  .dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute; /* Positioned relative to parent */
+    top: 100%; /* Positioned below the parent container */
+    left: 0;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1000; /* Ensure it stays on top */
+    min-width: 200px;
+    padding: 10px 0; /* Add vertical padding for better spacing */
+  }
+  
+  /* Show Dropdown Menu on Hover */
+  .menu-icon-container:hover .dropdown-menu {
+    display: block; /* Make the dropdown visible */
+  }
+  
+  /* Dropdown Links */
+  .dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #0071c5;
+    color: white;
+  }
+  
+  /* Submenu Styles */
+  .submenu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 0;
+    left: 100%; /* Align to the right of the parent menu */
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1000; /* Ensure it stays on top */
+    min-width: 150px;
+    padding: 10px 0;
+  }
+  
+  /* Show Submenu on Hover */
+  .dropdown:hover > .submenu {
+    display: block; /* Make the submenu visible */
+  }
+  
+  /* Submenu Links */
+  .submenu a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .submenu a:hover {
+    background-color: #0071c5;
+    color: white;
+  }
+  
+  /* Responsive Styles for Mobile */
+  @media (max-width: 768px) {
+    .dropdown-menu {
+      position: static; /* Stack menus vertically for mobile */
+      box-shadow: none;
+      border: none;
+      padding: 0;
+    }
+  
+    .submenu {
+      position: static;
+      display: block; /* Always show submenus on mobile */
+      box-shadow: none;
+      border: none;
+      margin-left: 20px; /* Indent submenus */
+    }
+  
+    .menu-icon-container:hover .dropdown-menu {
+      display: block; /* Always show menu for mobile hover/focus */
+    }
+  }
+  
+  /* Remove bullets from dropdown menu */
+.dropdown-menu ul {
+  list-style: none; /* Removes bullets */
+  margin: 0; /* Reset margins */
+  padding: 0; /* Reset padding */
+}

@@ -6,10 +6,50 @@
     <title>Programs in Brooklyn - Design @ CUNY</title>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/borough.css" />
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/results.css">
   </head>
   <body>
     <div id="wrapper">
       <header class="site-header">
+        <div class="menu-icon-container">
+          <button class="menu-icon">
+            <img src="../images/menu.svg" alt="Menu Icon" />
+          </button>
+          <nav class="dropdown-menu">
+            <ul>
+              <!-- Locations Dropdown -->
+              <li class="dropdown">
+                <a href="#">Locations</a>
+                <ul class="submenu">
+                  <li><a href="../borough-pages/bronx.html">Bronx</a></li>
+                  <li><a href="../borough-pages/brooklyn.html">Brooklyn</a></li>
+                  <li><a href="../borough-pages/queens.html">Queens</a></li>
+                  <li><a href="../borough-pages/manhattan.html">Manhattan</a></li>
+                </ul>
+              </li>
+      
+              <!-- Disciplines Dropdown -->
+              <li class="dropdown">
+                <a href="#">Disciplines</a>
+                <ul class="submenu">
+                  <li><a href="../discipline-page/digital-design.html">Digital Design</a></li>
+                  <li><a href="../discipline-page/animation.html">Animation</a></li>
+                  <li><a href="../discipline-page/industrial-design.html">Industrial Design</a></li>
+                </ul>
+              </li>
+      
+              <!-- Degrees Dropdown -->
+              <li class="dropdown">
+                <a href="#">Degrees</a>
+                <ul class="submenu">
+                  <li><a href="../degree-pages/associate.html">Associate Degrees</a></li>
+                  <li><a href="../degree-pages/bachelor.html">Bachelor Degrees</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
         <h1><a href="../index.html">DESIGN @ CUNY</a></h1>
         <nav class="top-nav">
           <div class="menubar">
@@ -31,14 +71,15 @@
       </header>
 
       <main>
+        
         <section class="find-program">
           <h2>Find a Design Program in Brooklyn</h2>
           <div class="dropdown-container">
             <select id="discipline-filter">
               <option value="" disabled selected>Discipline</option>
-              <option value="graphic">Graphic Design</option>
+              <option value="graphic">Digital Design</option>
               <option value="animation">Animation</option>
-              <option value="web">Web Design</option>
+              <option value="web">Industrial Design</option>
             </select>
             <select id="degree-filter">
               <option value="" disabled selected>Degree</option>
@@ -59,31 +100,46 @@
 
         <section class="programs-list">
           <!-- Example Program Cards with data- attributes for filtering -->
-          <div class="program-card" data-discipline="graphic" data-degree="associate" data-borough="brooklyn">
-            <img src="https://via.placeholder.com/200x150" alt="Graphic Design - Kingsborough Community College" />
-            <h3 class="program-title">Graphic Design - Kingsborough Community College</h3>
-            <p class="program-description">
-              This program prepares students for careers in graphic design, digital arts, and visual communication.
-            </p>
-            <button class="learn-more-btn">Learn More</button>
+          <div class="program-card" data-discipline="graphic" data-degree="bachelor" data-borough="manhattan">
+            <img src="../images/communication.gif" alt="Electronic Design Program" />
+            <h3>Animation - Kingsborough Community College</h3>
+            <p>The graphic communication specialization provides training in graphics as well as basic training in the broader aspects of business communication. It prepares the graphic artist to enter a business environment.</p>
+            <button class="view-more-btn"><a href="https://www.kbcc.cuny.edu/academicdepartments/art/Animation.html" target="_blank">View More</a></button>
           </div>
 
           <div class="program-card" data-discipline="animation" data-degree="associate" data-borough="brooklyn">
-            <img src="https://via.placeholder.com/200x150" alt="Animation - Kingsborough Community College" />
-            <h3 class="program-title">Animation - Kingsborough Community College</h3>
-            <p class="program-description">
-              Provides students with hand-drawn animation skills in a digital environment, 3D animation, and storyboarding.
-            </p>
-            <button class="learn-more-btn">Learn More</button>
+            <img src="../images/graphic1.jpg" alt="Animation Program" />
+            <h3>Graphic Design & Illustration - Kingsborough Community College</h3>
+            <p>Learn traditional animation in a digital environment, including storyboarding and 3D animation.</p>
+            <button class="view-more-btn"><a href="https://www.kbcc.cuny.edu/academicdepartments/art/Graphic-Design-and-Illustration.html" target="_blank">View More</a></button>
           </div>
 
-          <div class="program-card" data-discipline="web" data-degree="bachelor" data-borough="brooklyn">
-            <img src="https://via.placeholder.com/200x150" alt="Web Design - Kingsborough Community College" />
-            <h3 class="program-title">Web Design - Kingsborough Community College</h3>
-            <p class="program-description">
-              Prepares students for web design, user experience, and digital technology careers.
-            </p>
-            <button class="learn-more-btn">Learn More</button>
+          <div class="program-card" data-discipline="animation" data-degree="associate" data-borough="brooklyn">
+            <img src="../images/indus1.jpg" alt="Animation Program" />
+            <h3>UX Design - Kingsborough Community College</h3>
+            <p>Learn traditional animation in a digital environment, including storyboarding and 3D animation.</p>
+            <button class="view-more-btn"><a href="https://www.kbcc.cuny.edu/academicdepartments/art/UX-Design.html" target="_blank">View More</a></button>
+          </div>
+
+          <div class="program-card" data-discipline="industrial" data-degree="associate" data-borough="brooklyn">
+            <img src="../images/tech1.gif" alt="Industrial Design Program" />
+            <h3>Industrial Design Technology - New York City College of Technology</h3>
+            <p>The Industrial Design Technology (IND) program is designed to provide students with a wide variety of skills enabling them to utilize a number of 2D, 3D and animation/simulation software packages in several diverse fields.</p>
+            <button class="view-more-btn"><a href="http://www.citytech.cuny.edu/mechanical/industrial-technology-aas.aspx" target="_blank">View More</a></button>
+          </div>
+
+          <div class="program-card" data-discipline="graphic" data-degree="bachelor" data-borough="manhattan">
+            <img src="../images/fingers.gif" alt="Electronic Design Program" />
+            <h3>Communication Design - NYC College of Technology</h3>
+            <p>The AAS degree program in Communication Design provides students with a solid foundation in the theory and practices of the Communication Design profession and a grounding in general education. Students explore visual expression through a range of courses in drawing, design and web design.</p>
+            <button class="view-more-btn"><a href="https://www.citytech.cuny.edu/communication-design/communication-design-aas.aspx" target="_blank">View More</a></button>
+          </div>
+
+          <div class="program-card" data-discipline="industrial" data-degree="associate" data-borough="brooklyn">
+            <img src="../images/tech1.gif" alt="Industrial Design Program" />
+            <h3>Industrial Design Technology - New York City College of Technology</h3>
+            <p>The BFA degree develops students' abilities to frame, research and solve increasingly complex visual communication problems. Students develop a professional portfolio that  prepares them for employment as art directors, graphic designers, illustrators and web designers.  </p>
+            <button class="view-more-btn"><a href="http://www.citytech.cuny.edu/communication-design/communication-design-bfa.aspx" target="_blank">View More</a></button>
           </div>
 
         </section>

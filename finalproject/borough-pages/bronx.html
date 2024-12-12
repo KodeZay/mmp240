@@ -6,10 +6,50 @@
     <title>Programs in the Bronx - Design @ CUNY</title>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/borough.css" />
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/results.css">
   </head>
   <body>
     <div id="wrapper">
       <header class="site-header">
+        <div class="menu-icon-container">
+          <button class="menu-icon">
+            <img src="../images/menu.svg" alt="Menu Icon" />
+          </button>
+          <nav class="dropdown-menu">
+            <ul>
+              <!-- Locations Dropdown -->
+              <li class="dropdown">
+                <a href="#">Locations</a>
+                <ul class="submenu">
+                  <li><a href="../borough-pages/bronx.html">Bronx</a></li>
+                  <li><a href="../borough-pages/brooklyn.html">Brooklyn</a></li>
+                  <li><a href="../borough-pages/queens.html">Queens</a></li>
+                  <li><a href="../borough-pages/manhattan.html">Manhattan</a></li>
+                </ul>
+              </li>
+      
+              <!-- Disciplines Dropdown -->
+              <li class="dropdown">
+                <a href="#">Disciplines</a>
+                <ul class="submenu">
+                  <li><a href="../discipline-page/digital-design.html">Digital Design</a></li>
+                  <li><a href="../discipline-page/animation.html">Animation</a></li>
+                  <li><a href="../discipline-page/industrial-design.html">Industrial Design</a></li>
+                </ul>
+              </li>
+      
+              <!-- Degrees Dropdown -->
+              <li class="dropdown">
+                <a href="#">Degrees</a>
+                <ul class="submenu">
+                  <li><a href="../degree-pages/associate.html">Associate Degrees</a></li>
+                  <li><a href="../degree-pages/bachelor.html">Bachelor Degrees</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
         <h1><a href="../index.html">DESIGN @ CUNY</a></h1>
         <nav class="top-nav">
           <div class="menubar">
@@ -37,9 +77,9 @@
           <div class="dropdown-container">
             <select id="discipline-filter">
               <option value="" disabled selected>Discipline</option>
-              <option value="graphic">Graphic Design</option>
+              <option value="graphic">Digital Design</option>
               <option value="animation">Animation</option>
-              <option value="web">Web Design</option>
+              <option value="web">Industrial Design</option>
             </select>
             <select id="degree-filter">
               <option value="" disabled selected>Degree</option>
@@ -60,42 +100,34 @@
 
         
         <section class="programs-list">
-          
+          <div class="program-card" data-discipline="digital" data-degree="associate" data-borough="bronx">
+            <img src="../images/bxcc.gif" alt="Electronic Design Program" />
+            <h3>Digital Design - Bronx Community College</h3>
+            <p>This program prepares students for careers in the visual communication industry in positions such as graphic design, web design, computer animation, 3D graphic visualization, motion graphics design and interactive multimedia design.</p>
+            <button class="view-more-btn"><a href="http://www.bcc.cuny.edu/academics/academic-departments/art-and-music-department/degree-and-certificate-programs-courses/digital-design/" target="_blank">View More</a></button>
+          </div>
+
+          <div class="program-card" data-discipline="animation" data-degree="associate" data-borough="bronx">
+            <img src="../images/animation.png" alt="Design Program" />
+            <h3>Digital Design & Animation - Hostos Community College</h3>
+            <p>Through lectures and studio-based classes the Digital Design and Animation Program provides students with a strong foundation for future occupations in motion graphics, animation, graphic design and/or web design.</p>
+            <button class="view-more-btn"><a href="https://www.hostos.cuny.edu/www-hostosdesign-com" target="_blank">View More</a></button>
+          </div>
+
           <div class="program-card" data-discipline="graphic" data-degree="associate" data-borough="bronx">
-            <img src="https://via.placeholder.com/200x150" alt="Digital Design Program" />
-            <h3 class="program-title">Digital Design - Bronx Community College</h3>
-            <p class="program-description">
-              This program prepares students for careers in graphic design, web design, and interactive media.
-            </p>
-            <button class="learn-more-btn">Learn More</button>
+            <img src="../images/game-design.jpg" alt="Electronic Design Program" />
+            <h3>Game Design - Hostos Community College</h3>
+            <p>The Associate degree in Game Design will provide students with a strong foundation for future occupations in the entertainment software industry. It will provide students with additional career opportunities in the field of entertainment software publishing.</p>
+            <button class="view-more-btn"><a href="https://www.hostos.cuny.edu/Administrative-Offices/Office-of-Academic-Affairs/Departments/Humanities/Programs/Game-Design-(1)" target="_blank">View More</a></button>
           </div>
 
-          <div class="program-card" data-discipline="animation" data-degree="bachelor" data-borough="bronx">
-            <img src="https://via.placeholder.com/200x150" alt="Animation Program" />
-            <h3 class="program-title">Digital Design & Animation - Hostos Community College</h3>
-            <p class="program-description">
-              A program providing strong foundational knowledge in digital arts including animation and design.
-            </p>
-            <button class="learn-more-btn">Learn More</button>
+          <div class="program-card" data-discipline="digital" data-degree="bachelor" data-borough="bronx">
+            <img src="../images/200w.gif" alt="Electronic Design Program" />
+            <h3>Computer Graphics & Imaging - Lehman College</h3>
+            <p>The Computer Graphics and Imaging program offers courses covering web design, imaging, 3-D modeling, animation, interactivity, and broadcast design, preparing students for careers as well as graduate study in these fields.</p>
+            <button class="view-more-btn"><a href="https://lehman-undergraduate.catalog.cuny.edu/programs/CGI-BS" target="_blank">View More</a></button>
           </div>
-
-          <div class="program-card" data-discipline="Animation" data-degree="associate" data-borough="bronx">
-            <img src="https://via.placeholder.com/200x150" alt="Game Design Program" />
-            <h3 class="program-title">Game Design - Hostos Community College</h3>
-            <p class="program-description">
-              This program prepares students for future careers in the entertainment software industry.
-            </p>
-            <button class="learn-more-btn">Learn More</button>
-          </div>
-
-          <div class="program-card" data-discipline="graphic" data-degree="bachelor" data-borough="bronx">
-            <img src="https://via.placeholder.com/200x150" alt="Graphic Design Program" />
-            <h3 class="program-title">Computer Graphics & Imaging - Lehman College</h3>
-            <p class="program-description">
-              A program covering web design, 3D modeling, animation, and imaging, preparing students for creative careers.
-            </p>
-            <button class="learn-more-btn">Learn More</button>
-          </div>
+          
         </section>
       </main>
 

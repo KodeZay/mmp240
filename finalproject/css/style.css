@@ -15,11 +15,14 @@ body {
 
 .site-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start; /* Align items to the left */
   align-items: center;
   padding: 10px 20px;
-  background-color: transparent; 
+  background-color: white; /* Ensure it matches your theme */
+  z-index: 1000; /* Ensure it stays on top */
+  gap: 5px; /* Add space between elements */
 }
+
 
 
 .site-header h1 {
@@ -401,6 +404,51 @@ footer {
   bottom: 0;
 }
 
+/* Dropdown Menu Reset */
+.menu-icon-container {
+  margin-right: 10px; /* Align closer to the left */
+  display: flex;
+  align-items: center;
+}
+
+
+.menu-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.menu-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white; /* Ensure it matches your site's theme */
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.site-header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-weight: bold;
+}
+
+.site-header h1 a {
+  text-decoration: none;
+  color: #000;
+}
+
+.site-header h1 a:hover {
+  color: #0071c5;
+}
 
 
 

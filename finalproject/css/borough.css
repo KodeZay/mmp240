@@ -128,15 +128,62 @@
     cursor: pointer;
   }
   
-  /* Footer */
-  footer {
-    padding: 10px 20px;
-    color: white;
-    text-align: center;
-    font-size: 0.9rem;
-    background-color: #333;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+
+  .programs-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
   }
+  
+  .program-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .program-card img {
+    width: 100%; /* Ensures the image fills the width of the container */
+    height: auto; /* Maintains aspect ratio */
+    max-height: 150px; /* Optional: Restrict maximum height for consistency */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    border-radius: 5px; /* Optional: Adds rounded corners to the images */
+    margin-bottom: 15px; /* Space between image and text */
+  }
+  
+  .program-card h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  .program-card p {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #666;
+  }
+  
+  .view-more-btn a {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Inherit the color of the button */
+    display: inline-block; /* Ensures proper layout within the button */
+  }
+  
+  .view-more-btn {
+    background-color: #0071c5; /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 20px; /* Adjust padding */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center; /* Center the link text */
+  }
+  
+  .view-more-btn:hover {
+    background-color: #005fa3; /* Hover background color */
+  }
+  
+  
   

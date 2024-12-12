@@ -6,10 +6,50 @@
     <title>Programs in Manhattan - Design @ CUNY</title>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/borough.css" />
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/results.css">
   </head>
   <body>
     <div id="wrapper">
       <header class="site-header">
+        <div class="menu-icon-container">
+          <button class="menu-icon">
+            <img src="../images/menu.svg" alt="Menu Icon" />
+          </button>
+          <nav class="dropdown-menu">
+            <ul>
+              
+              <li class="dropdown">
+                <a href="#">Locations</a>
+                <ul class="submenu">
+                  <li><a href="../borough-pages/bronx.html">Bronx</a></li>
+                  <li><a href="../borough-pages/brooklyn.html">Brooklyn</a></li>
+                  <li><a href="../borough-pages/queens.html">Queens</a></li>
+                  <li><a href="../borough-pages/manhattan.html">Manhattan</a></li>
+                </ul>
+              </li>
+      
+              <!-- Disciplines Dropdown -->
+              <li class="dropdown">
+                <a href="#">Disciplines</a>
+                <ul class="submenu">
+                  <li><a href="../discipline-page/digital-design.html">Digital Design</a></li>
+                  <li><a href="../discipline-page/animation.html">Animation</a></li>
+                  <li><a href="../discipline-page/industrial-design.html">Industrial Design</a></li>
+                </ul>
+              </li>
+      
+              <!-- Degrees Dropdown -->
+              <li class="dropdown">
+                <a href="#">Degrees</a>
+                <ul class="submenu">
+                  <li><a href="../degree-pages/associate.html">Associate Degrees</a></li>
+                  <li><a href="../degree-pages/bachelor.html">Bachelor Degrees</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
         <h1><a href="../index.html">DESIGN @ CUNY</a></h1>
         <nav class="top-nav">
           <div class="menubar">
@@ -31,15 +71,15 @@
       </header>
 
       <main>
-        <!-- Search Filters (dropdowns prefilled from query params) -->
+        
         <section class="find-program">
           <h2>Find a Design Program in Manhattan</h2>
           <div class="dropdown-container">
             <select id="discipline-filter">
               <option value="" disabled selected>Discipline</option>
-              <option value="graphic">Graphic Design</option>
+              <option value="digital">Digital Design</option>
               <option value="animation">Animation</option>
-              <option value="web">Web Design</option>
+              <option value="industrial">Industrial Design</option>
             </select>
             <select id="degree-filter">
               <option value="" disabled selected>Degree</option>
@@ -58,43 +98,35 @@
           <button id="search-button">Search</button>
         </section>
 
-        <!-- Program Cards (Filtered Dynamically) -->
+        
         <section class="programs-list">
-          <!-- Program Cards with data- attributes for filtering -->
+          
           <div class="program-card" data-discipline="graphic" data-degree="bachelor" data-borough="manhattan">
-            <img src="https://via.placeholder.com/200x150" alt="Electronic Design & Multimedia" />
-            <h3 class="program-title">Electronic Design & Multimedia - The City College of New York</h3>
-            <p class="program-description">
-              Prepares students for careers in design in traditional print and emerging electronic media.
-            </p>
-            <button class="learn-more-btn">Learn More</button>
+            <img src="../images/comm1.gif" alt="Electronic Design Program" />
+            <h3>Animation and Motion Graphics - Borough of Manhattan Community College</h3>
+            <p>An interdisciplinary program offering concentrations in digital video, computer graphics, and systems applications.</p>
+            <button class="view-more-btn"><a href="http://www.bmcc.cuny.edu/media-arts/ani_program.jsp" target="_blank">View More</a></button>
           </div>
 
           <div class="program-card" data-discipline="graphic" data-degree="bachelor" data-borough="manhattan">
-            <img src="https://via.placeholder.com/200x150" alt="Graphic Communication" />
-            <h3 class="program-title">Graphic Communication - Baruch College</h3>
-            <p class="program-description">
-              Provides training in graphic design, with a strong grounding in business communication.
-            </p>
-            <button class="learn-more-btn">Learn More</button>
+            <img src="../images/comm1.gif" alt="Electronic Design Program" />
+            <h3>Multimedia Programming and Design - Borough of Manhattan Community College</h3>
+            <p>An interdisciplinary program offering concentrations in digital video, computer graphics, and systems applications.</p>
+            <button class="view-more-btn"><a href="http://www.bmcc.cuny.edu/media-arts/mmp_program.jsp" target="_blank">View More</a></button>
           </div>
 
-          <div class="program-card" data-discipline="animation" data-degree="bachelor" data-borough="manhattan">
-            <img src="https://via.placeholder.com/200x150" alt="Graphic Communication" />
-            <h3 class="program-title">Design - Queens College</h3>
-            <p class="program-description">
-              Students can choose from Communication Design, Animation & Illustration, or Interaction Design.
-            </p>
-            <button class="learn-more-btn">Learn More</button>
+          <div class="program-card" data-discipline="graphic" data-degree="bachelor" data-borough="manhattan">
+            <img src="../images/media.gif" alt="Electronic Design Program" />
+            <h3>Electronic Design & Multimedia - The City College of New York</h3>
+            <p>This program prepares students for careers in design for print and electronic media.</p>
+            <button class="view-more-btn"><a href="https://www.ccny.cuny.edu/edm" target="_blank">View More</a></button>
           </div>
 
-          <div class="program-card" data-discipline="graphic" data-degree="associate" data-borough="manhattan">
-            <img src="https://via.placeholder.com/200x150" alt="Design & Multimedia" />
-            <h3 class="program-title">Electronic Design and Multimedia - The City College of New York</h3>
-            <p class="program-description">
-              Offers a comprehensive program for students looking to enter design and multimedia careers.
-            </p>
-            <button class="learn-more-btn">Learn More</button>
+          <div class="program-card" data-discipline="graphic" data-degree="bachelor" data-borough="manhattan">
+            <img src="../images/communication.gif" alt="Electronic Design Program" />
+            <h3>Graphic Communication - Baruch College</h3>
+            <p>The graphic communication specialization provides training in graphics as well as basic training in the broader aspects of business communication. It prepares the graphic artist to enter a business environment.</p>
+            <button class="view-more-btn"><a href="https://weissman.baruch.cuny.edu/weissman-academic-departments/areas-of-study/graphic-communication/" target="_blank">View More</a></button>
           </div>
 
         </section>
