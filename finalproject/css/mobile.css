@@ -1,36 +1,36 @@
-/* General Reset for all devices */
+
 html,
 body {
   margin: 0;
   padding: 0;
 }
 
-/* Hero Banner Adjustment for iPhone Sizes */
+
 @media screen and (max-width: 768px) {
   .hero-banner {
-    height: 300px; /* Adjust height for smaller devices */
+    height: 300px; 
     background-size: cover;
     background-position: center;
   }
 
   .hero-text {
-    font-size: 1.8rem; /* Decrease text size */
+    font-size: 1.8rem; 
     padding: 0 5px;
   }
 
   .hero-btn {
-    padding: 8px 15px; /* Adjust button size */
+    padding: 8px 15px; 
   }
 }
 
-/* Adjust the Site Header */
+
 @media screen and (max-width: 768px) {
   .site-header h1 {
-    font-size: 1.0rem; /* Make the header text smaller */
+    font-size: 1.0rem; 
   }
 }
 
-/* Adjust the find-program dropdowns for mobile devices */
+
 @media screen and (max-width: 768px) {
   .find-program select {
     font-size: 14px;

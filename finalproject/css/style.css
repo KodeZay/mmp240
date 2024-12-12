@@ -352,8 +352,8 @@ footer {
 }
 
 button#search-button {
-  margin-top: 15px; /* Adjust value as needed for spacing */
-  padding: 10px 20px; /* Optional: Adjust padding for a better look */
+  margin-top: 15px; 
+  padding: 10px 20px; 
   background-color: #0071c5;
   color: white;
   border: none;
@@ -368,25 +368,25 @@ button#search-button:hover {
 }
 
 .site-header h1 a {
-  text-decoration: none; /* Remove underline */
-  color: #000; /* Match the text color */
-  font-size: 1.5rem; /* Adjust the size if needed */
+  text-decoration: none; 
+  color: #000; 
+  font-size: 1.5rem; 
   font-weight: bold;
 }
 .site-header h1 a:hover {
-  color: #0071c5; /* Add a hover effect if desired */
+  color: #0071c5; 
 }
 
-/* General Footer Style */
+
 footer {
   text-align: center;
-  color: black; /* Black text color */
+  color: black; 
   font-size: 0.9rem;
   padding: 10px 0;
-  margin-top: 20px; /* Creates spacing above the footer */
+  margin-top: 20px; 
 }
 
-/* Ensuring it stays at the bottom only if content isn't enough */
+
 html,
 body {
   min-height: 100%;
@@ -398,15 +398,15 @@ body {
   flex: 1;
 }
 
-/* Optional: Sticky Footer Example */
+
 footer {
   position: relative;
   bottom: 0;
 }
 
-/* Dropdown Menu Reset */
+
 .menu-icon-container {
-  margin-right: 10px; /* Align closer to the left */
+  margin-right: 10px; 
   display: flex;
   align-items: center;
 }
@@ -429,8 +429,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: white; /* Ensure it matches your site's theme */
-  z-index: 1000; /* Ensure it stays on top */
+  background-color: white; 
+  z-index: 1000; 
 }
 
 .site-header h1 {
