@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/borough.css" />
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/results.css">
+    <link rel="stylesheet" href="../css/dropdown.css">
   </head>
   <body>
     <div id="wrapper">
@@ -75,71 +76,76 @@
         <section class="find-program">
           <h2>Find a Design Program in Brooklyn</h2>
           <div class="dropdown-container">
-            <select id="discipline-filter">
-              <option value="" disabled selected>Discipline</option>
-              <option value="graphic">Digital Design</option>
-              <option value="animation">Animation</option>
-              <option value="web">Industrial Design</option>
-            </select>
-            <select id="degree-filter">
-              <option value="" disabled selected>Degree</option>
-              <option value="associate">Associate</option>
-              <option value="bachelor">Bachelor</option>
-              
-            </select>
-            <select id="borough-filter">
-              <option value="" disabled selected>Borough</option>
-              <option value="bronx">Bronx</option>
-              <option value="brooklyn">Brooklyn</option>
-              <option value="manhattan">Manhattan</option>
-              <option value="queens">Queens</option>
-            </select>
+            <div class="custom-dropdown" id="discipline-dropdown">
+              <span class="dropdown-label">Discipline</span>
+              <ul class="dropdown-options">
+                <li data-value="digital">Digital Design</li>
+                <li data-value="animation">Animation</li>
+                <li data-value="industrial">Industrial Design</li>
+              </ul>
+            </div>
+            <div class="custom-dropdown" id="degree-dropdown">
+              <span class="dropdown-label">Degree</span>
+              <ul class="dropdown-options">
+                <li data-value="associate">Associate</li>
+                <li data-value="bachelor">Bachelor</li>
+              </ul>
+            </div>
+            <div class="custom-dropdown" id="borough-dropdown">
+              <span class="dropdown-label">Borough</span>
+              <ul class="dropdown-options">
+                <li data-value="bronx">Bronx</li>
+                <li data-value="brooklyn">Brooklyn</li>
+                <li data-value="manhattan">Manhattan</li>
+                <li data-value="queens">Queens</li>
+              </ul>
+            </div>
           </div>
-          <button id="search-button">Search</button>
         </section>
+        
 
         <section class="programs-list">
           
-          <div class="program-card" data-discipline="graphic" data-degree="bachelor" data-borough="manhattan">
+          <div class="program-card" data-discipline="digital" data-degree="bachelor" data-borough="brooklyn">
             <img src="../images/communication.gif" alt="Electronic Design Program" />
             <h3>Animation - Kingsborough Community College</h3>
             <p>The graphic communication specialization provides training in graphics as well as basic training in the broader aspects of business communication. It prepares the graphic artist to enter a business environment.</p>
-            <button class="view-more-btn"><a href="https://www.kbcc.cuny.edu/academicdepartments/art/Animation.html" target="_blank">View More</a></button>
+            <button class="view-more-btn" onclick="window.open('https://www.kbcc.cuny.edu/academicdepartments/art/Animation.html', '_blank')">View More</button>
           </div>
 
           <div class="program-card" data-discipline="animation" data-degree="associate" data-borough="brooklyn">
             <img src="../images/graphic1.jpg" alt="Animation Program" />
             <h3>Graphic Design & Illustration - Kingsborough Community College</h3>
             <p>Learn traditional animation in a digital environment, including storyboarding and 3D animation.</p>
-            <button class="view-more-btn"><a href="https://www.kbcc.cuny.edu/academicdepartments/art/Graphic-Design-and-Illustration.html" target="_blank">View More</a></button>
+            <button class="view-more-btn" onclick="window.open('https://www.kbcc.cuny.edu/academicdepartments/art/Graphic-Design-and-Illustration.html', '_blank')">View More</button>
           </div>
 
           <div class="program-card" data-discipline="animation" data-degree="associate" data-borough="brooklyn">
             <img src="../images/indus1.jpg" alt="Animation Program" />
             <h3>UX Design - Kingsborough Community College</h3>
             <p>Learn traditional animation in a digital environment, including storyboarding and 3D animation.</p>
-            <button class="view-more-btn"><a href="https://www.kbcc.cuny.edu/academicdepartments/art/UX-Design.html" target="_blank">View More</a></button>
+            <button class="view-more-btn" onclick="window.open('https://www.kbcc.cuny.edu/academicdepartments/art/UX-Design.html', '_blank')">View More</button>
           </div>
 
           <div class="program-card" data-discipline="industrial" data-degree="associate" data-borough="brooklyn">
             <img src="../images/tech1.gif" alt="Industrial Design Program" />
             <h3>Industrial Design Technology - New York City College of Technology</h3>
             <p>The Industrial Design Technology (IND) program is designed to provide students with a wide variety of skills enabling them to utilize a number of 2D, 3D and animation/simulation software packages in several diverse fields.</p>
-            <button class="view-more-btn"><a href="http://www.citytech.cuny.edu/mechanical/industrial-technology-aas.aspx" target="_blank">View More</a></button>
+            <button class="view-more-btn" onclick="window.open('http://www.citytech.cuny.edu/mechanical/industrial-technology-aas.aspx', '_blank')">View More</button>
           </div>
 
-          <div class="program-card" data-discipline="graphic" data-degree="bachelor" data-borough="manhattan">
+          <div class="program-card" data-discipline="digital" data-degree="bachelor" data-borough="brooklyn">
             <img src="../images/fingers.gif" alt="Electronic Design Program" />
             <h3>Communication Design - NYC College of Technology</h3>
             <p>The AAS degree program in Communication Design provides students with a solid foundation in the theory and practices of the Communication Design profession and a grounding in general education. Students explore visual expression through a range of courses in drawing, design and web design.</p>
-            <button class="view-more-btn"><a href="https://www.citytech.cuny.edu/communication-design/communication-design-aas.aspx" target="_blank">View More</a></button>
+            <button class="view-more-btn" onclick="window.open('http://www.citytech.cuny.edu/communication-design/communication-design-aas.aspx', '_blank')">View More</button>
           </div>
 
           <div class="program-card" data-discipline="industrial" data-degree="associate" data-borough="brooklyn">
             <img src="../images/tech1.gif" alt="Industrial Design Program" />
             <h3>Industrial Design Technology - New York City College of Technology</h3>
             <p>The BFA degree develops students' abilities to frame, research and solve increasingly complex visual communication problems. Students develop a professional portfolio that  prepares them for employment as art directors, graphic designers, illustrators and web designers.  </p>
-            <button class="view-more-btn"><a href="http://www.citytech.cuny.edu/communication-design/communication-design-bfa.aspx" target="_blank">View More</a></button>
+            <button class="view-more-btn" onclick="window.open('http://www.citytech.cuny.edu/communication-design/communication-design-bfa.aspx', '_blank')">View More</button>
           </div>
 
         </section>
@@ -152,53 +158,65 @@
 
     
    <script>
+ document.addEventListener('DOMContentLoaded', () => {
+  
+  function toggleDropdown(event) {
+    const dropdown = event.target.closest('.custom-dropdown');
+    const options = dropdown.querySelector('.dropdown-options');
+    options.style.display = options.style.display === 'block' ? 'none' : 'block';
+  }
 
-document.addEventListener('DOMContentLoaded', () => {
+  
+  function selectOption(event) {
+    const selectedOption = event.target;
+    const dropdown = selectedOption.closest('.custom-dropdown');
+    const label = dropdown.querySelector('.dropdown-label');
+
     
-    const searchButton = document.getElementById('search-button');
-    const disciplineFilter = document.getElementById('discipline-filter');
-    const degreeFilter = document.getElementById('degree-filter');
-    const boroughFilter = document.getElementById('borough-filter');
-    const programCards = document.querySelectorAll('.program-card'); 
-  
+    label.textContent = selectedOption.textContent;
+
     
-    function filterPrograms() {
-      
-      const disciplineValue = disciplineFilter.value.toLowerCase();
-      const degreeValue = degreeFilter.value.toLowerCase();
-      const boroughValue = boroughFilter.value.toLowerCase();
-  
-      programCards.forEach(card => {
-        const discipline = card.dataset.discipline.toLowerCase();  
-        const degree = card.dataset.degree.toLowerCase();  
-        const borough = card.dataset.borough.toLowerCase();  
-  
-        
-        const matchesDiscipline = !disciplineValue || discipline.includes(disciplineValue);
-        const matchesDegree = !degreeValue || degree.includes(degreeValue);
-        const matchesBorough = !boroughValue || borough.includes(boroughValue);
-  
-        
-        if (matchesDiscipline && matchesDegree && matchesBorough) {
-          card.style.display = 'block';  
-        } else {
-          card.style.display = 'none';  
-        }
-      });
+    const options = dropdown.querySelector('.dropdown-options');
+    options.style.display = 'none';
+
+    
+    dropdown.dataset.value = selectedOption.dataset.value;
+
+    
+    if (dropdown.id === 'borough-dropdown') {
+      redirectToPage(selectedOption.dataset.value, 'borough-pages');
+    } else if (dropdown.id === 'discipline-dropdown') {
+      redirectToPage(selectedOption.dataset.value, 'discipline-page');
+    } else if (dropdown.id === 'degree-dropdown') {
+      redirectToPage(selectedOption.dataset.value, 'degree-pages');
     }
+  }
+
   
+  function redirectToPage(value, folder) {
+    if (value) {
+      const pagePath = `../${folder}/${value}.html`; 
+      window.location.href = pagePath; 
+    }
+  }
+
+  
+  document.querySelectorAll('.custom-dropdown').forEach((dropdown) => {
+    const label = dropdown.querySelector('.dropdown-label');
+    const options = dropdown.querySelectorAll('.dropdown-options li');
+
     
-    searchButton.addEventListener('click', (event) => {
-      event.preventDefault();  
-      filterPrograms();  
+    label.addEventListener('click', toggleDropdown);
+
+    
+    options.forEach((option) => {
+      option.addEventListener('click', selectOption);
     });
-  
-   
-    disciplineFilter.addEventListener('change', filterPrograms);
-    degreeFilter.addEventListener('change', filterPrograms);
-    boroughFilter.addEventListener('change', filterPrograms);
   });
-  
+});
+// LINKS ALL PAGES IN CUSTOM DROPDOWN MENU
+
+      
     </script>
   </body>
 </html>

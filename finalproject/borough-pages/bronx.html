@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/borough.css" />
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/results.css">
+    <link rel="stylesheet" href="../css/dropdown.css">
   </head>
   <body>
     <div id="wrapper">
@@ -73,29 +74,33 @@
       <main>
         
         <section class="find-program">
-          <h2>Find a Design Program in the Bronx</h2>
+          <h2>Find a Design Program in The Bronx</h2>
           <div class="dropdown-container">
-            <select id="discipline-filter">
-              <option value="" disabled selected>Discipline</option>
-              <option value="graphic">Digital Design</option>
-              <option value="animation">Animation</option>
-              <option value="web">Industrial Design</option>
-            </select>
-            <select id="degree-filter">
-              <option value="" disabled selected>Degree</option>
-              <option value="associate">Associate</option>
-              <option value="bachelor">Bachelor</option>
-              
-            </select>
-            <select id="borough-filter">
-              <option value="" disabled selected>Borough</option>
-              <option value="bronx">Bronx</option>
-              <option value="brooklyn">Brooklyn</option>
-              <option value="manhattan">Manhattan</option>
-              <option value="queens">Queens</option>
-            </select>
+            <div class="custom-dropdown" id="discipline-dropdown">
+              <span class="dropdown-label">Discipline</span>
+              <ul class="dropdown-options">
+                <li data-value="digital">Digital Design</li>
+                <li data-value="animation">Animation</li>
+                <li data-value="industrial">Industrial Design</li>
+              </ul>
+            </div>
+            <div class="custom-dropdown" id="degree-dropdown">
+              <span class="dropdown-label">Degree</span>
+              <ul class="dropdown-options">
+                <li data-value="associate">Associate</li>
+                <li data-value="bachelor">Bachelor</li>
+              </ul>
+            </div>
+            <div class="custom-dropdown" id="borough-dropdown">
+              <span class="dropdown-label">Borough</span>
+              <ul class="dropdown-options">
+                <li data-value="bronx">Bronx</li>
+                <li data-value="brooklyn">Brooklyn</li>
+                <li data-value="manhattan">Manhattan</li>
+                <li data-value="queens">Queens</li>
+              </ul>
+            </div>
           </div>
-          <button id="search-button">Search</button>
         </section>
 
         
@@ -104,28 +109,28 @@
             <img src="../images/bxcc.gif" alt="Electronic Design Program" />
             <h3>Digital Design - Bronx Community College</h3>
             <p>This program prepares students for careers in the visual communication industry in positions such as graphic design, web design, computer animation, 3D graphic visualization, motion graphics design and interactive multimedia design.</p>
-            <button class="view-more-btn"><a href="http://www.bcc.cuny.edu/academics/academic-departments/art-and-music-department/degree-and-certificate-programs-courses/digital-design/" target="_blank">View More</a></button>
+            <button class="view-more-btn" onclick="window.open('http://www.bcc.cuny.edu/academics/academic-departments/art-and-music-department/degree-and-certificate-programs-courses/digital-design/', '_blank')">View More</button>
           </div>
 
           <div class="program-card" data-discipline="animation" data-degree="associate" data-borough="bronx">
             <img src="../images/animation.png" alt="Design Program" />
             <h3>Digital Design & Animation - Hostos Community College</h3>
             <p>Through lectures and studio-based classes the Digital Design and Animation Program provides students with a strong foundation for future occupations in motion graphics, animation, graphic design and/or web design.</p>
-            <button class="view-more-btn"><a href="https://www.hostos.cuny.edu/www-hostosdesign-com" target="_blank">View More</a></button>
+            <button class="view-more-btn" onclick="window.open('https://www.hostos.cuny.edu/www-hostosdesign-com', '_blank')">View More</button>
           </div>
 
-          <div class="program-card" data-discipline="graphic" data-degree="associate" data-borough="bronx">
+          <div class="program-card" data-discipline="digital" data-degree="associate" data-borough="bronx">
             <img src="../images/game-design.jpg" alt="Electronic Design Program" />
             <h3>Game Design - Hostos Community College</h3>
             <p>The Associate degree in Game Design will provide students with a strong foundation for future occupations in the entertainment software industry. It will provide students with additional career opportunities in the field of entertainment software publishing.</p>
-            <button class="view-more-btn"><a href="https://www.hostos.cuny.edu/Administrative-Offices/Office-of-Academic-Affairs/Departments/Humanities/Programs/Game-Design-(1)" target="_blank">View More</a></button>
+            <button class="view-more-btn" onclick="window.open('https://www.hostos.cuny.edu/Administrative-Offices/Office-of-Academic-Affairs/Departments/Humanities/Programs/Game-Design-(1)', '_blank')">View More</button>
           </div>
 
           <div class="program-card" data-discipline="digital" data-degree="bachelor" data-borough="bronx">
             <img src="../images/200w.gif" alt="Electronic Design Program" />
             <h3>Computer Graphics & Imaging - Lehman College</h3>
             <p>The Computer Graphics and Imaging program offers courses covering web design, imaging, 3-D modeling, animation, interactivity, and broadcast design, preparing students for careers as well as graduate study in these fields.</p>
-            <button class="view-more-btn"><a href="https://lehman-undergraduate.catalog.cuny.edu/programs/CGI-BS" target="_blank">View More</a></button>
+            <button class="view-more-btn" onclick="window.open('https://lehman-undergraduate.catalog.cuny.edu/programs/CGI-BS', '_blank')">View More</button>
           </div>
           
         </section>
@@ -137,50 +142,62 @@
     </div>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+  
+  function toggleDropdown(event) {
+    const dropdown = event.target.closest('.custom-dropdown');
+    const options = dropdown.querySelector('.dropdown-options');
+    options.style.display = options.style.display === 'block' ? 'none' : 'block';
+  }
+
+  
+  function selectOption(event) {
+    const selectedOption = event.target;
+    const dropdown = selectedOption.closest('.custom-dropdown');
+    const label = dropdown.querySelector('.dropdown-label');
+
     
-    const searchButton = document.getElementById('search-button');
-    const disciplineFilter = document.getElementById('discipline-filter');
-    const degreeFilter = document.getElementById('degree-filter');
-    const boroughFilter = document.getElementById('borough-filter');
-    const programCards = document.querySelectorAll('.program-card'); 
-  
+    label.textContent = selectedOption.textContent;
+
     
-    function filterPrograms() {
-      
-      const disciplineValue = disciplineFilter.value.toLowerCase();
-      const degreeValue = degreeFilter.value.toLowerCase();
-      const boroughValue = boroughFilter.value.toLowerCase();
-  
-      programCards.forEach(card => {
-        const discipline = card.dataset.discipline.toLowerCase();  
-        const degree = card.dataset.degree.toLowerCase();  
-        const borough = card.dataset.borough.toLowerCase();  
-  
-        
-        const matchesDiscipline = !disciplineValue || discipline.includes(disciplineValue);
-        const matchesDegree = !degreeValue || degree.includes(degreeValue);
-        const matchesBorough = !boroughValue || borough.includes(boroughValue);
-  
-        
-        if (matchesDiscipline && matchesDegree && matchesBorough) {
-          card.style.display = 'block'; 
-        } else {
-          card.style.display = 'none';  
-        }
-      });
+    const options = dropdown.querySelector('.dropdown-options');
+    options.style.display = 'none';
+
+    
+    dropdown.dataset.value = selectedOption.dataset.value;
+
+    
+    if (dropdown.id === 'borough-dropdown') {
+      redirectToPage(selectedOption.dataset.value, 'borough-pages');
+    } else if (dropdown.id === 'discipline-dropdown') {
+      redirectToPage(selectedOption.dataset.value, 'discipline-page');
+    } else if (dropdown.id === 'degree-dropdown') {
+      redirectToPage(selectedOption.dataset.value, 'degree-pages');
     }
+  }
+
   
+  function redirectToPage(value, folder) {
+    if (value) {
+      const pagePath = `../${folder}/${value}.html`; 
+      window.location.href = pagePath; 
+    }
+  }
+
+  
+  document.querySelectorAll('.custom-dropdown').forEach((dropdown) => {
+    const label = dropdown.querySelector('.dropdown-label');
+    const options = dropdown.querySelectorAll('.dropdown-options li');
+
     
-    searchButton.addEventListener('click', (event) => {
-      event.preventDefault();  
-      filterPrograms();  
+    label.addEventListener('click', toggleDropdown);
+
+    
+    options.forEach((option) => {
+      option.addEventListener('click', selectOption);
     });
-  
-    
-    disciplineFilter.addEventListener('change', filterPrograms);
-    degreeFilter.addEventListener('change', filterPrograms);
-    boroughFilter.addEventListener('change', filterPrograms);
   });
+});
+// LINKS ALL PAGES IN CUSTOM DROPDOWN MENU
   
 </script>
     

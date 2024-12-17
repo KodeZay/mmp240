@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/mobile.css" media="(max-width: 768px)">
     <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/dropdown.css">
+    
   </head>
   <body>
     <div id="wrapper">
@@ -18,7 +20,7 @@
             </button>
             <nav class="dropdown-menu">
               <ul>
-                <!-- Locations Dropdown -->
+                
                 <li class="dropdown">
                   <a href="#">Locations</a>
                   <ul class="submenu">
@@ -33,9 +35,9 @@
                 <li class="dropdown">
                   <a href="#">Disciplines</a>
                   <ul class="submenu">
-                    <li><a href="discipline-page/digital-design.html">Digital Design</a></li>
+                    <li><a href="discipline-page/digital.html">Digital Design</a></li>
                     <li><a href="discipline-page/animation.html">Animation</a></li>
-                    <li><a href="discipline-page/industrial-design.html">Industrial Design</a></li>
+                    <li><a href="discipline-page/industrial.html">Industrial Design</a></li>
                   </ul>
                 </li>
         
@@ -70,32 +72,35 @@
         </nav>
       </header>
 
-      <!-- Search Section -->
+      
       <section class="find-program">
         <h2>Find a Design Program</h2>
-        <form id="search-form" method="GET" action="results.html">
-          <div class="dropdown-container">
-            <select name="discipline" id="discipline-filter">
-              <option value="" disabled selected>Discipline</option>
-              <option value="digital">Digital Design</option>
-              <option value="animation">Animation</option>
-              <option value="Industrial">Industrial Design</option>
-            </select>
-            <select name="degree" id="degree-filter">
-              <option value="" disabled selected>Degree</option>
-              <option value="associate">Associate</option>
-              <option value="bachelor">Bachelor</option>
-            </select>
-            <select name="borough" id="borough-filter">
-              <option value="" disabled selected>Borough</option>
-              <option value="bronx">Bronx</option>
-              <option value="brooklyn">Brooklyn</option>
-              <option value="queens">Queens</option>
-              <option value="manhattan">Manhattan</option>
-            </select>
+        <div class="dropdown-container">
+          <div class="custom-dropdown" id="discipline-dropdown">
+            <span class="dropdown-label">Discipline</span>
+            <ul class="dropdown-options">
+              <li data-value="digital">Digital Design</li>
+              <li data-value="animation">Animation</li>
+              <li data-value="industrial">Industrial Design</li>
+            </ul>
           </div>
-          <button type="submit" id="search-button">Search</button>
-        </form>
+          <div class="custom-dropdown" id="degree-dropdown">
+            <span class="dropdown-label">Degree</span>
+            <ul class="dropdown-options">
+              <li data-value="associate">Associate</li>
+              <li data-value="bachelor">Bachelor</li>
+            </ul>
+          </div>
+          <div class="custom-dropdown" id="borough-dropdown">
+            <span class="dropdown-label">Borough</span>
+            <ul class="dropdown-options">
+              <li data-value="bronx">Bronx</li>
+              <li data-value="brooklyn">Brooklyn</li>
+              <li data-value="manhattan">Manhattan</li>
+              <li data-value="queens">Queens</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       
@@ -150,6 +155,64 @@
     </div>
 
     <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  
+  function toggleDropdown(event) {
+    const dropdown = event.target.closest('.custom-dropdown');
+    const options = dropdown.querySelector('.dropdown-options');
+    options.style.display = options.style.display === 'block' ? 'none' : 'block';
+  }
+
+  
+  function selectOption(event) {
+    const selectedOption = event.target;
+    const dropdown = selectedOption.closest('.custom-dropdown');
+    const label = dropdown.querySelector('.dropdown-label');
+
+    
+    label.textContent = selectedOption.textContent;
+
+    
+    const options = dropdown.querySelector('.dropdown-options');
+    options.style.display = 'none';
+
+    
+    dropdown.dataset.value = selectedOption.dataset.value;
+
+    
+    if (dropdown.id === 'borough-dropdown') {
+      redirectToPage(selectedOption.dataset.value, 'borough-pages');
+    } else if (dropdown.id === 'discipline-dropdown') {
+      redirectToPage(selectedOption.dataset.value, 'discipline-page');
+    } else if (dropdown.id === 'degree-dropdown') {
+      redirectToPage(selectedOption.dataset.value, 'degree-pages');
+    }
+  }
+
+  
+  function redirectToPage(value, folder) {
+    if (value) {
+      const pagePath = `${folder}/${value}.html`; 
+      window.location.href = pagePath; 
+    }
+  }
+
+  
+  document.querySelectorAll('.custom-dropdown').forEach((dropdown) => {
+    const label = dropdown.querySelector('.dropdown-label');
+    const options = dropdown.querySelectorAll('.dropdown-options li');
+
+    
+    label.addEventListener('click', toggleDropdown);
+
+    
+    options.forEach((option) => {
+      option.addEventListener('click', selectOption);
+    });
+  });
+});
+// LINKS ALL PAGES IN CUSTOM DROPDOWN MENU
+
         
     </script>
       </body>
